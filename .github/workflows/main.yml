@@ -47,7 +47,7 @@ jobs:
     needs: [docker-image]
     steps:
       - name: Execute component test
-        run: chmod +x ci/performance-test.sh
+        run: bash -eu ci/performance-test.sh 
 
         
     
