@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone-down
+        uses: actions/checkout@v3
         run: ci/build-app.sh
     container: gradle:6-jdk11
     
