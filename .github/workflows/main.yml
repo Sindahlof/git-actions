@@ -25,6 +25,11 @@ jobs:
       docker_unsername: ${{ github.actor }}
       docker_password: ${{  secrets.GITHUB_TOKEN }}
     steps:
+      - name: donwload artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: code
+          path: .
       - name: build docker
         run: chmod +x ci/build-docker.sh && ci/build-docker.sh
       - name: push docker
